@@ -31,7 +31,8 @@ public class SinglyLinkedList {
         }
     //display() will display all the nodes present in the list
         public void display(){
-            Node current = head;     //Node current will point to head
+            //Node current will point to head
+            Node current = head;
             if (head == null){
                 System.out.println("List is empty....");
                 return;
