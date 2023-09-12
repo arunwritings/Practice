@@ -3,7 +3,7 @@ package data_structures;
 public class SinglyLinkedList {
 
     //Represent a node of the linked list
-    class Node {
+    static class Node {
         int data;
         Node next;
         public Node(int data) {
@@ -11,23 +11,20 @@ public class SinglyLinkedList {
             this.next = null;
         }
     }
-
     //Initialize the head and tail of the linked list
-        public Node head = null;
-        public Node tail =null;
-
+        Node head, tail = null;
     //addNode() will add a new node to the list
         public void addNode(int data){
             Node newNode = new Node(data);   //Create a new node
+            //newNode will become new tail of the list
             if (head == null){      //Checks if the list is empty
                 //If list is empty, both head and tail will point to new node
                 head = newNode;
-                tail = newNode;
             }else {
                 //newNode will be added after tail such that tail's next will point to newNode
                 tail.next = newNode;
-                tail = newNode;    //newNode will become new tail of the list
             }
+            tail = newNode;
         }
     //display() will display all the nodes present in the list
         public void display(){

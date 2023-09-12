@@ -1,28 +1,25 @@
 package data_structures;
 
 public class CircularLinkedList {
-    class Node{
+    static class Node{
         int data;
         Node next;
-
         public Node(int data){
             this.data=data;
         }
     }
     Node head,tail=null;
-
     void addNode(int data){
         Node newNode = new Node(data);
         if (head == null){
-            head=newNode;
-            tail=newNode;
+            head = tail = newNode;
             newNode.next=head;
         }else {
             tail.next=newNode;
             tail=newNode;
             tail.next=head;
         }
-        }
+    }
     void display(){
         Node current= head;
         if (head==null){
