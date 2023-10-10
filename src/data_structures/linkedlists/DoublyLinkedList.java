@@ -1,4 +1,4 @@
-package data_structures;
+package data_structures.linkedlists;
 
 public class DoublyLinkedList {
     static class Node{

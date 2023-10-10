@@ -1,4 +1,4 @@
-package data_structures;
+package data_structures.linkedlists;
 
 public class ReverseLinkedList {
     static class Node{
@@ -12,7 +12,7 @@ public class ReverseLinkedList {
     static Node head=null;
     Node reverse(Node node){
         Node previous = null;
-        Node current = node;
+        Node current = head;
         Node next = null;
         while (current!=null){
             next=current.next;
