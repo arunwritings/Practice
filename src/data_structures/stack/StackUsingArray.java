@@ -4,7 +4,7 @@ public class StackUsingArray {
 
     int size = 5;
     int[] stackArray = new int[size];
-    int top=-1;
+    int top=-1;  //initializing stack as empty stack
 
     void push(int data){
         top++;
@@ -12,9 +12,9 @@ public class StackUsingArray {
     }
 
     int pop(){
-        int temp = stackArray[top];
+        int poppingElement = stackArray[top];
         top--;
-        return temp;
+        return poppingElement;
     }
 
     int peek(){
