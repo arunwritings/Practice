@@ -3,17 +3,17 @@ package data_structures.arrays;
 
 public class MissingNumber {
 
-    public int missingNumber(int[] nums) {
-        int length = nums.length;
+    public static int missingNumber(int[] numbers) {
+        int length = numbers.length;
         int expectedNumber = length*(length+1)/2;
         int actualSum = 0;
-        for (int i=0;i<length;i++) {
-            actualSum += nums[i];
+        for (int num : numbers) {
+            actualSum += num;
         }
         return expectedNumber - actualSum;
     }
     public static void main(String[] args) {
-        MissingNumber missingNumber = new MissingNumber();
-        missingNumber.missingNumber(new int[]{0, 1, 2, 3, 4});
+        int result = missingNumber(new int[]{0, 1, 2, 3, 4, 5, 6, 8, 9, 10});
+        System.out.println("The missing number is "+result);
     }
 }

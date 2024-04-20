@@ -10,18 +10,17 @@ public class ReverseLinkedList {
         }
     }
     static Node head=null;
-    Node reverse(Node node){
+    Node reverse(){
         Node previous = null;
         Node current = head;
-        Node next = null;
+        Node next;
         while (current!=null){
             next=current.next;
             current.next=previous;
             previous=current;
             current=next;
         }
-        node = previous;
-        return node;
+        return previous;
     }
     void printList(Node node){
         while (node!=null){
@@ -38,7 +37,7 @@ public class ReverseLinkedList {
 
         System.out.println("Given Linked List: ");
         list.printList(head);
-        head=list.reverse(head);
+        head=list.reverse();
         System.out.println();
         System.out.println("Reverse Linked List: ");
         list.printList(head);

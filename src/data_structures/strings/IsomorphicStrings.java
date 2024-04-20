@@ -4,7 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IsomorphicStrings {
-    public boolean isIsomorphic(String s, String t) {
+
+    /**
+     Isomorphic strings are two strings that have the same pattern of characters when mapped.
+     In simpler terms, you can think of them as strings where you can replace each character
+     in the first string with another character such that the two strings become identical.
+
+     For example, consider the strings "egg" and "add". Even though the characters are different,
+     you can map 'e' to 'a' and 'g' to 'd' such that the two strings become identical.
+     Similarly, you can map 'a' to 'e' and 'd' to 'g' to make the second string "egg".
+     **/
+    public static boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length()) return false;
         Map<Character, Character> characterMap = new HashMap<>();
         for (int i=0;i<=s.length()-1;i++) {
@@ -27,7 +37,7 @@ public class IsomorphicStrings {
     }
 
     public static void main(String[] args) {
-        IsomorphicStrings isomorphicStrings = new IsomorphicStrings();
-        isomorphicStrings.isIsomorphic("add","egg");
+        boolean result = isIsomorphic("add","egg");
+        System.out.println(result);
     }
 }

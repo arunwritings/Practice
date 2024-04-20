@@ -2,13 +2,11 @@ package data_structures.queues;
 
 public class CircularQueueUsingArray {
     private final int[] array;
-    private int start, end, currentSize, maxSize;
-    public CircularQueueUsingArray(){
-        array = new int[5];
-        start = -1;
-        end = -1;
-        currentSize = 0;
-    }
+    private int start;
+    private int end;
+    private int currentSize;
+    private final int maxSize;
+
     public CircularQueueUsingArray(int maxSize){
         this.maxSize=maxSize;
         array = new int[maxSize];
@@ -49,7 +47,7 @@ public class CircularQueueUsingArray {
         return poppedElement;
     }
 
-    public int topElement(){
+    public int firstElement(){
         if (start == -1){
             System.out.println("The queue is empty");
             System.exit(1);
@@ -71,10 +69,10 @@ public class CircularQueueUsingArray {
         queueUsingArray.push(2);
         queueUsingArray.push(3);
         queueUsingArray.push(4);
-        System.out.println("The peek of the queue before deleting "+queueUsingArray.topElement());
+        System.out.println("The peek of the queue before deleting "+queueUsingArray.firstElement());
         System.out.println("The size of the queue before deleting "+queueUsingArray.size());
         System.out.println("The first element to be deleted "+queueUsingArray.pop());
-        System.out.println("The peek of the queue after deleting "+queueUsingArray.topElement());
+        System.out.println("The peek of the queue after deleting "+queueUsingArray.firstElement());
         System.out.println("The size of the queue after deleting "+queueUsingArray.size());
     }
 }

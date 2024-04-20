@@ -1,23 +1,24 @@
 package data_structures.arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
 
-    public int[] twoSum(int[] nums, int target){
+    public static int[] twoSum(int[] numbers, int target){
         Map<Integer, Integer> numMap = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
+        for (int i = 0; i < numbers.length; i++) {
+            int complement = target - numbers[i];
             if (numMap.containsKey(complement)) {
                 return new int[]{numMap.get(complement), i};
             }
-            numMap.put(nums[i], i);
+            numMap.put(numbers[i], i);
         }
         return null;
     }
     public static void main(String[] args) {
-        TwoSum twoSum = new TwoSum();
-        twoSum.twoSum(new int[]{2,7,11,14},9);
+        int[] result = twoSum(new int[]{2,17,11,14,7},9);
+        System.out.println(Arrays.toString(result));
     }
 }
