@@ -2,7 +2,7 @@ package data_structures.linkedlists;
 
 public class ConvertBinaryNumberInALinkedListToInteger_1290 {
 
-    static class ListNode {
+    public static class ListNode {
       int val;
       ListNode next;
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
