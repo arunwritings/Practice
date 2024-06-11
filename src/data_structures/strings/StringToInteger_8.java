@@ -1,4 +1,4 @@
-public class StringToInteger {
+public class StringToInteger_8 {
     public static int myAtoi(String s) {
     s = s.strip();
     if (s.isEmpty())
