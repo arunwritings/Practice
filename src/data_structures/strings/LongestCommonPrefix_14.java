@@ -1,3 +1,7 @@
+package data_structures.strings;
+
+import java.util.Arrays;
+
 public class LongestCommonPrefix_14 {
 
    public String longestCommonPrefix(String[] strings) {
