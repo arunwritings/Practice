@@ -1,7 +1,6 @@
 package data_structures.arrays;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class KidsWithTheGreatestNumberOfCandies_1431 {
