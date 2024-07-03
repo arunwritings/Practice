@@ -1,4 +1,4 @@
-package data_structures.strings;
+package data_structures.strings.easy;
 
 public class StringToInteger_8 {
     public static int myAtoi(String s) {

@@ -1,4 +1,4 @@
-package data_structures.strings;
+package data_structures.strings.easy;
 
 public class MaximumNumberOfWordsFoundInSentences_2114 {
 

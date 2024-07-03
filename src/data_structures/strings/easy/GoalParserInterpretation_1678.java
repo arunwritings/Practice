@@ -1,4 +1,4 @@
-package data_structures.strings;
+package data_structures.strings.easy;
 
 public class GoalParserInterpretation_1678 {
 
