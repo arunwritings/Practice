@@ -1,4 +1,4 @@
-package data_structures.arrays;
+package data_structures.arrays.easy;
 
 
 public class MissingNumber {
