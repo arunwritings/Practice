@@ -1,4 +1,4 @@
-package data_structures.linkedlists;
+package data_structures.linkedlists.easy;
 
 public class MiddleOfTheLinkedList_876 {
 

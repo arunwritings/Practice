@@ -1,6 +1,6 @@
 package data_structures.tree;
 
-public class MaximumHeightORDepthOfBinaryTree {
+public class MaximumHeightOrDepthOfBinaryTree {
 
     static class Node {
         int data;
@@ -27,6 +27,6 @@ public class MaximumHeightORDepthOfBinaryTree {
         root.right = new Node(3);
         root.left.left = new Node(4);
         root.left.right = new Node(5);
-        System.out.println(new MaximumHeightORDepthOfBinaryTree().maxDepth(root));
+        System.out.println(new MaximumHeightOrDepthOfBinaryTree().maxDepth(root));
     }
 }
