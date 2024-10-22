@@ -1,5 +1,6 @@
 package data_structures.arrays.easy;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,17 +15,25 @@ public class IntersectionOfTwoArrays_349 {
      Output: [2]
      **/
     public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> num1Set = new HashSet<>();
-        Set<Integer> result = new HashSet<>();
-        for (int num : nums1) {
-            num1Set.add(num);
-        }
-        for (int num : nums2) {
-            if (num1Set.contains(num)) {
-                result.add(num);
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int i = 0, j = 0;
+        int[] tempResult = new int[Math.min(nums1.length, nums2.length)];
+        int index = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                if (index == 0 || tempResult[index - 1] != nums1[i]) {
+                    tempResult[index++] = nums1[i];
+                }
+                i++;
+                j++;
             }
         }
-        return result.stream().mapToInt(Integer::intValue).toArray();
+        return Arrays.copyOfRange(tempResult, 0, index);
     }
 
     public static void main(String[] args) {
