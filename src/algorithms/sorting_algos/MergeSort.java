@@ -9,10 +9,11 @@ public class MergeSort {
         int mid = array.length / 2;
         int[] leftArray = new int[mid];
         int[] rightArray = new int[array.length - mid];
-
+        //System.arraycopy method copies elements: From array into leftArray (from index 0 to mid).
         System.arraycopy(array, 0, leftArray, 0, mid);
 
         if (array.length - mid >= 0)
+            //The System.arraycopy method copies elements: From array into rightArray (from index mid to the end).
             System.arraycopy(array, mid, rightArray,
                     0, array.length - mid);
 
