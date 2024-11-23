@@ -21,6 +21,7 @@ public class BinaryTreePreorderTraversal_144 {
     /*INPUT: A
     *      B   C
     * OUTPUT:ABC
+    * It is also Breadth First Search algo
     * */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> answer = new ArrayList<>();

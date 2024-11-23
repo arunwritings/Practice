@@ -1,6 +1,6 @@
-package data_structures.tree;
+package algorithms;
 
-public class DepthFirstSearchRecursive {
+public class DFS_Of_Tree {
 
     static class Node {
         int data;

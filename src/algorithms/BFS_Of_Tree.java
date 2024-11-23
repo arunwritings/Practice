@@ -1,6 +1,6 @@
-package data_structures.tree;
+package algorithms;
 
-public class BreadthFirstSearch {
+public class BFS_Of_Tree {
 
     static class Node {
         int data;
@@ -13,6 +13,9 @@ public class BreadthFirstSearch {
     /*
     Time Complexity: O(N^2), where N is the number of nodes in the skewed tree.
     Auxiliary Space: O(N) recursion stack space used is O(N).
+    Input:  A
+          B   C
+    Output: ABC
     */
     static void printLevelOrder(Node root) {
         int height = height(root);
