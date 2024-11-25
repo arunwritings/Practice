@@ -1,4 +1,4 @@
-package data_structures.graph;
+package data_structures.graph.easy;
 
 import java.util.ArrayList;
 import java.util.List;

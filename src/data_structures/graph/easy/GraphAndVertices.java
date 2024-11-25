@@ -1,4 +1,4 @@
-package data_structures.graph;
+package data_structures.graph.easy;
 
 public class GraphAndVertices {
 
