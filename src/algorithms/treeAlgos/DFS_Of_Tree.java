@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.treeAlgos;
 
 public class DFS_Of_Tree {
 
