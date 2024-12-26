@@ -16,8 +16,18 @@ public class GraphAndVertices {
         return (long) Math.pow(2,totalEdges);
     }
 
+    /**
+     Since there are three possibilities (no edge, an edge in one direction, or an edge in the other direction) for each of these
+     n(n−1) edges, the total number of possible directed graphs is: 3 pow (n * (n-1))
+     **/
+    static long directedGraphsForGivenVertices(int n) {
+        int totalEdges = n * (n-1);
+        return (long) Math.pow(3,totalEdges);
+    }
+
     public static void main(String[] args) {
         int n = 5;
-        System.out.println(count(n));
+        System.out.println("Number of Undirected Graphs constructed is "+count(n));
+        System.out.println("Number of Directed Graphs constructed is "+ directedGraphsForGivenVertices(2));
     }
 }
