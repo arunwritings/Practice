@@ -8,6 +8,8 @@ public class LongestPalindromicSubstring_5 {
      Output: "bab"
      Explanation: "aba" is also a valid answer.
      **/
+
+    //Dynamic programming approach
     public String longestPalindrome(String s) {
         if (s == null || s.isEmpty()) {
             return "";
@@ -40,9 +42,40 @@ public class LongestPalindromicSubstring_5 {
         return s.substring(start, start + maxLength);
     }
 
+    //Two pointers approach
+    public String longestPalindromeTwoPointers(String s) {
+        if (s == null || s.isEmpty()) {
+            return "";
+        }
+        int n = s.length();
+        int start = 0;
+        int maxLength = 1;
+        for (int i = 0; i < n; i++) {
+            // Check for odd-length palindromes
+            int len1 = expandAroundCenter(s, i, i);
+            // Check for even-length palindromes
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > maxLength) {
+                maxLength = len;
+                start = i - (len - 1) / 2;
+            }
+        }
+        return s.substring(start, start + maxLength);
+    }
+
+    private int expandAroundCenter(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+
 
     public static void main(String[] args) {
         LongestPalindromicSubstring_5 obj = new LongestPalindromicSubstring_5();
         System.out.println(obj.longestPalindrome("babad"));
+        System.out.println(obj.longestPalindromeTwoPointers("abba"));
     }
 }
