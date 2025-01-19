@@ -1,4 +1,4 @@
-package data_structures.graph.medium;
+package data_structures.arrays.medium;
 
 import java.util.*;
 
