@@ -41,4 +41,5 @@ public class LongestIncreasingPathInAMatrix_329 {
         LongestIncreasingPathInAMatrix_329 l = new LongestIncreasingPathInAMatrix_329();
         System.out.println(l.longestIncreasingPath(matrix));
     }
+
 }
