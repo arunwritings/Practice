@@ -1,5 +1,7 @@
 package data_structures.arrays.medium;
 
+import java.util.Arrays;
+
 public class KokoEatingBananas_875 {
 
     /**
@@ -13,12 +15,12 @@ public class KokoEatingBananas_875 {
      **/
     public int minEatingSpeed(int[] piles, int h) {
         int minSpeed = 1;
-        int maxSpeed = (int) 1e9;
+        int maxSpeed = Arrays.stream(piles).max().getAsInt();
         while (minSpeed < maxSpeed) {
             int midSpeed = minSpeed + (maxSpeed - minSpeed) / 2;
             int totalHours = 0;
             for (int bananas : piles) {
-                totalHours += (bananas + midSpeed - 1) / midSpeed;
+                totalHours += (int) Math.ceil((double) bananas /midSpeed);
             }
             if (totalHours <= h) {
                 maxSpeed = midSpeed;
