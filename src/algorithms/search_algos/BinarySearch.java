@@ -3,7 +3,7 @@ package algorithms.search_algos;
 public class BinarySearch {
 
     public static void binarySearch(int[] array, int start, int last, int key) {
-        int middle = (start+last)/2;
+        int middle = start + (last-start)/2;
         while (start<=last) {    //Since the loop iterating cut down to half, Time complexity = O(log n)
             if (array[middle] < key) {
                 start = middle+1;
@@ -13,7 +13,7 @@ public class BinarySearch {
             }else {
                 last = middle-1;
             }
-            middle = (start+last)/2;
+            middle = start + (last-start)/2;
         }
         if (start>last) {
             System.out.println("The key didn't found.");
