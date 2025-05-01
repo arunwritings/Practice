@@ -1,6 +1,9 @@
 package data_structures.strings.hard;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MinimumWindowSubstring_76 {
 
     /**
@@ -15,29 +18,33 @@ public class MinimumWindowSubstring_76 {
      Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
      **/
     public String minWindow(String s, String t) {
-        int[] map = new int[128];
-        int count = t.length();
-        int start = 0, end = 0, startIndex = 0, minLength = Integer.MAX_VALUE;
-        for (char c: t.toCharArray()){
-            map[c]++;
+        if (s.length() < t.length()) return "";
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : t.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        char[] charS = s.toCharArray();
-
-        while (end < charS.length) {
-            if (map[charS[end++]]-- > 0) {
-                count--;
+        int left = 0, right = 0, start = 0, minLen = Integer.MAX_VALUE, count = t.length();
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            if (map.containsKey(c)) {
+                if (map.get(c) > 0) count--;
+                map.put(c, map.get(c) - 1);
             }
+            right++;
             while (count == 0) {
-                if (end - start < minLength) {
-                    startIndex = start;
-                    minLength = end - start;
+                if (right - left < minLen) {
+                    minLen = right - left;
+                    start = left;
                 }
-                if (map[charS[start++]]++ == 0) {
-                    count++;
+                char leftChar = s.charAt(left);
+                if (map.containsKey(leftChar)) {
+                    map.put(leftChar, map.get(leftChar) + 1);
+                    if (map.get(leftChar) > 0) count++;
                 }
+                left++;
             }
         }
-        return minLength == Integer.MAX_VALUE ? "" : new String(charS, startIndex, minLength);
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(start, start + minLen);
     }
 
     public static void main(String[] args) {
